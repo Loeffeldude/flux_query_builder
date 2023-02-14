@@ -3,7 +3,6 @@
 A python querybuilder for the flux query language used by InfluxDB
 
 ## Getting Started
-<br>
 
 ### Installation
 
