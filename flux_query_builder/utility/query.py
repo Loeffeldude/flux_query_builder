@@ -1,6 +1,5 @@
 from typing import Any
 
-
 class S:
     """Utility class to stringify a value for Query Functions
 
@@ -27,7 +26,6 @@ class FilterCondition:
 
     def __str__(self) -> str:
         return f"r.{self.record_field} {self.operator} {self.value}"
-
 
 class FilterBuilder:
     """Creates a filter function with a inline for measurements, fields and tags

@@ -1,4 +1,3 @@
-from re import S
 from typing import Set, Union
 from flux_query_builder.functions.base import FluxQueryFunction
 from flux_query_builder.functions import From
