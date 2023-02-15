@@ -41,6 +41,5 @@ push = false
 "flux_query_builder/__init__.py" = ["{version}"]
 "README.md" = [
     "{version}",
-    "{pep440_version}",
 ]
 
