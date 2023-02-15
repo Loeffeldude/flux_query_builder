@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "flux-query-builder"
-version = "1.0.0"
+version = "0.0.0"
 description = "A python querybuilder for the Flux query language"
 readme = "README.md"
 authors = [{ name = "Nico Kraetschmer", email = "kraetschmerni@gmail.com" }]
