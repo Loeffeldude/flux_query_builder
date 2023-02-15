@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "flux-query-builder"
-version = "0.0.0"
+version = "1.0.0"
 description = "A python querybuilder for the Flux query language"
 readme = "README.md"
 authors = [{ name = "Nico Kraetschmer", email = "kraetschmerni@gmail.com" }]
 license = { file = "LICENSE" }
 classifiers = [
-    "License :: OSI Approved :: Apache 2.0 License",
+    "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
 ]
@@ -37,6 +37,7 @@ push = false
 [tool.bumpver.file_patterns]
 "pyproject.toml" = [
     'current_version = "{version}"',
+		'version = "{version}"'
 ]
 "flux_query_builder/__init__.py" = ["{version}"]
 "README.md" = [

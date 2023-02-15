@@ -1,6 +1,8 @@
 # Flux Query Builder
 
 Version: 1.0.0
+
+
 A python querybuilder for the flux query language used by InfluxDB
 
 ## Getting Started
