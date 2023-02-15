@@ -2,6 +2,7 @@ from flux_query_builder.utility.time import FluxTime
 from datetime import timedelta, datetime
 import unittest
 from unittest.mock import MagicMock
+from freezegun import freeze_time
 
 
 class FluxTimeTest(unittest.TestCase):
@@ -19,10 +20,9 @@ class FluxTimeTest(unittest.TestCase):
         t = FluxTime.from_datetime(date)
 
         self.assertEqual(str(t), '"2021-01-01T00:00:00"')
-
+    
+    @freeze_time("2021-01-01")
     def test_now(self):
-        datetime.now = MagicMock(return_value=datetime(2021, 1, 1))
-        
         t = FluxTime.now()
 
         self.assertEqual(str(t), f'"{datetime.now().isoformat()}"')
