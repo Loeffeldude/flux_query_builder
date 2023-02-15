@@ -1,2 +1,2 @@
-from .histogramQuantile import *
-from .scrape import *
+from .histogramQuantile import HistogramQuantile
+from .scrape import Scrape

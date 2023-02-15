@@ -1,1 +1,1 @@
-from .rate import *
+from .rate import Rate

@@ -1,3 +1,3 @@
-from .event import *
-from .endpoint import *
-from .toSensuName import *
+from .event import Event
+from .endpoint import Endpoint
+from .toSensuName import ToSensuName

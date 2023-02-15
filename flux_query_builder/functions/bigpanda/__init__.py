@@ -1,3 +1,3 @@
-from .sendAlert import *
-from .statusFromLevel import *
-from .endpoint import *
+from .sendAlert import SendAlert
+from .statusFromLevel import StatusFromLevel
+from .endpoint import Endpoint

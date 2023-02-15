@@ -1,1 +1,1 @@
-from .time import *
+from .time import Time

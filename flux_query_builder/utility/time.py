@@ -5,11 +5,10 @@ from dateutil.parser import isoparse
 from flux_query_builder.utility import S
 
 
-class InvalidDurationException(Exception):
-    pass
-
-
 class FluxTime:
+    timedelta: timedelta = None
+    datetime: datetime = None
+
     def __init__(
         self,
         timedelta: Union[timedelta, None] = None,
@@ -25,6 +24,16 @@ class FluxTime:
         else:
             raise ValueError("Must provide a timedelta, flux_time, or datetime")
 
+    @classmethod
+    def now(cls) -> "FluxTime":
+        return cls(datetime=datetime.now())
+    
+    @classmethod
+    def from_timedelta(cls, timedelta) -> "FluxTime":
+        return cls(timedelta=timedelta)
+    @classmethod
+    def from_datetime(cls, datetime) -> datetime:
+        return cls(datetime=datetime)
     @classmethod
     def delta_to_flux(cls, delta: timedelta) -> str:
         result_string = ""
@@ -44,7 +53,6 @@ class FluxTime:
             return isoparse(time)
         except ValueError:
             return cls.parse_duration(time)
-
     @staticmethod
     def parse_duration(dur: str) -> timedelta:
         """
@@ -58,7 +66,7 @@ class FluxTime:
 
         :raises InvalidDurationError: when the input string is not in the correct format"""
         if len(dur) < 2:
-            raise InvalidDurationException("Invalid duration")
+            raise ValueError("Invalid duration")
 
         is_negative = False
         if dur[0] == "-":
@@ -98,10 +106,10 @@ class FluxTime:
             elif unit == "y":
                 duration += timedelta(days=measure * 365)
             else:
-                raise InvalidDurationException("Invalid duration")
+                raise ValueError("Invalid duration")
 
         if not matched:
-            raise InvalidDurationException("Invalid duration")
+            raise ValueError("Invalid duration")
 
         if is_negative:
             duration = -duration

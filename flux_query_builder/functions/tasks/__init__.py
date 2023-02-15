@@ -1,1 +1,1 @@
-from .lastSuccess import *
+from .lastSuccess import LastSuccess

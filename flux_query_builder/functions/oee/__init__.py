@@ -1,2 +1,2 @@
-from .computeAPQ import *
-from .APQ import *
+from .computeAPQ import ComputeAPQ
+from .APQ import APQ

@@ -1,1 +1,1 @@
-from .query_range import *
+from .query_range import Query_range

@@ -14,16 +14,14 @@ classifiers = [
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
 ]
-keywords = ["flux", "influxdb", "utility"]
+keywords = ["flux", "influxdb", "influx","utility", "querybuilder", "query", "builder", "influx-query-builder", "flux-query-builder"]
 dependencies = [
-    "feedparser >= 5.2.0",
-    "html2text",
-    'tomli; python_version < "3.11"',
+    "dateparser >= 1.1.7",
 ]
 requires-python = ">=3.9"
 
 [project.optional-dependencies]
-dev = ["black", "bumpver", "isort", "pip-tools", "pytest"]
+dev = ["freezegun"]
 
 [project.urls]
 Homepage = "https://github.com/realpython/reader"

@@ -1,2 +1,2 @@
-from .send import *
-from .endpoint import *
+from .send import Send
+from .endpoint import Endpoint

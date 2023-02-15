@@ -1,1 +1,1 @@
-from .naiveBayes import *
+from .naiveBayes import NaiveBayes

@@ -1,1 +1,1 @@
-from .duration import *
+from .duration import Duration

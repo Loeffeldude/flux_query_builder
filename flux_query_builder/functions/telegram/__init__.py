@@ -1,2 +1,2 @@
-from .message import *
-from .endpoint import *
+from .message import Message
+from .endpoint import Endpoint

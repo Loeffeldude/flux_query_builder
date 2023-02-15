@@ -1,2 +1,2 @@
-from .encode import *
-from .parse import *
+from .encode import Encode
+from .parse import Parse

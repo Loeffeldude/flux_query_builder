@@ -1,3 +1,3 @@
-from .sendAlert import *
-from .respondersToJSON import *
-from .endpoint import *
+from .sendAlert import SendAlert
+from .respondersToJSON import RespondersToJSON
+from .endpoint import Endpoint
