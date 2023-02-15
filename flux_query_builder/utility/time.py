@@ -6,6 +6,11 @@ from flux_query_builder.utility import S
 
 
 class FluxTime:
+    """FluxTime is a wrapper around a datetime or timedelta object that can be used to convert to a flux duration string
+
+    Raises:
+        ValueError: Must provide a timedelta, flux_time, or datetime
+    """
     timedelta: timedelta = None
     datetime: datetime = None
 
@@ -26,16 +31,45 @@ class FluxTime:
 
     @classmethod
     def now(cls) -> "FluxTime":
+        """Get the current time as a FluxTime object
+
+        Returns:
+            FluxTime:The flux time now
+        """
         return cls(datetime=datetime.now())
     
     @classmethod
     def from_timedelta(cls, timedelta) -> "FluxTime":
+        """Create a FluxTime object from a timedelta
+
+        Args:
+            timedelta (datetime.timedelta): The timedelta to use
+
+        Returns:
+            FluxTime: The flux time object
+        """
         return cls(timedelta=timedelta)
     @classmethod
-    def from_datetime(cls, datetime) -> datetime:
+    def from_datetime(cls, datetime) -> "FluxTime":
+        """Create a FluxTime object from a datetime
+
+        Args:
+            datetime (datetime.datetime): The datetime to use
+
+        Returns:
+            FluxTime: The flux time object
+        """
         return cls(datetime=datetime)
     @classmethod
     def delta_to_flux(cls, delta: timedelta) -> str:
+        """Convert a timedelta to a flux duration string
+
+        Args:
+            delta (timedelta): The timedelta to convert
+
+        Returns:
+            str: The flux duration string
+        """
         result_string = ""
 
         if delta.days > 0:
@@ -49,22 +83,31 @@ class FluxTime:
         return result_string
     @classmethod
     def parse_time(cls, time: str) -> Union[datetime, timedelta]:
+        """Parse a string into a datetime or timedelta object
+
+        Args:
+            time (str): The time string to parse
+
+        Returns:
+            Union[datetime, timedelta]: The parsed time object
+        """
         try:
             return isoparse(time)
         except ValueError:
             return cls.parse_duration(time)
     @staticmethod
     def parse_duration(dur: str) -> timedelta:
+        """Parse a flux duration string into a timedelta object
+
+        Args:
+            dur (str): The duration string to parse
+
+        Raises:
+            ValueError: Invalid duration
+
+        Returns:
+            timedelta: The parsed timedelta object
         """
-        parse_duration - parse a string into a timedelta object
-
-        :param s: string in the format of "X[unit]" where X is a number and unit is one of ns, us, ms, s, m, h, d, w, mo
-
-        :type s: str
-
-        :return: timedelta object
-
-        :raises InvalidDurationError: when the input string is not in the correct format"""
         if len(dur) < 2:
             raise ValueError("Invalid duration")
 

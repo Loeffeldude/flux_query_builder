@@ -15,6 +15,8 @@ class S:
         return f'"{self.value}"'
 
 class FilterCondition:
+    """Represents a filter condition for a filter function
+    """
     record_field: str
     operator: str
     value: Any
